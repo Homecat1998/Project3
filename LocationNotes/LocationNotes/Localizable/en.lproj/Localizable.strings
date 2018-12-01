@@ -10,11 +10,11 @@
 "str_stop"                          = "Stop";
 "str_latitude"                      = "Latitude: ";
 "str_longitude"                     = "Longitude: ";
-"str_city"                          = "City: "
+"str_city"                          = "City: ";
 
-"str_humidity"                      = "Humidity: "
-"str_temp"                          = "Temp: "
-"str_weather"                       = "Weather: "
+"str_humidity"                      = "Humidity: ";
+"str_temp"                          = "Temp: ";
+"str_weather"                       = "Weather: ";
 
 
 "str_settings"                      = "Settings";

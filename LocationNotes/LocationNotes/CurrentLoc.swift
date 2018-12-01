@@ -8,35 +8,41 @@
 
 import UIKit
 import CoreLocation
+import JavaScriptCore
 
 class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var latitudeDescLabel: UILabel!
     @IBOutlet var longitudeDescLabel: UILabel!
-    @IBOutlet var cityDescLabsel: UILabel!
+    @IBOutlet var cityDescLabel: UILabel!
     @IBOutlet var latitudeLabel: UILabel!
     @IBOutlet var longitudeLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     
     @IBOutlet var weatherDescLabel: UILabel!
     @IBOutlet var tempDescLabel: UILabel!
-    @IBOutlet var humidityDescLabsel: UILabel!
+    @IBOutlet var humidityDescLabel: UILabel!
     @IBOutlet var weatherLabel: UILabel!
     @IBOutlet var tempLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
     
     var locationManager: CLLocationManager!
+    var weatherStr = "Waiting"
+    var tempStr = ""
+    var humidityStr = ""
+    
+    let appid = "f308a3865c9e761e31a618a1eb84b7cb"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         latitudeDescLabel.text = NSLocalizedString("str_latitude", comment: "")
         longitudeDescLabel.text = NSLocalizedString("str_longitude", comment: "")
-        cityDescLabsel.text = NSLocalizedString("str_city", comment: "")
+        cityDescLabel.text = NSLocalizedString("str_city", comment: "")
         
         weatherDescLabel.text = NSLocalizedString("str_weather", comment: "")
         tempDescLabel.text = NSLocalizedString("str_temp", comment: "")
-        weatherDescLabel.text = NSLocalizedString("str_humidity", comment: "")
+        humidityDescLabel.text = NSLocalizedString("str_humidity", comment: "")
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -92,12 +98,6 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func tryStop() {
-        locationManager.stopUpdatingLocation()
-        longitudeLabel.text = "-"
-        latitudeLabel.text = "-"
-    }
-    
     func locToCity(loc: CLLocation){
         let geoCoder :CLGeocoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(loc, completionHandler: {(placemark, error) -> Void in
@@ -106,7 +106,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                 let mark = array.firstObject as! CLPlacemark
                 let city: String = (mark.addressDictionary! as NSDictionary).value(forKey: "City") as! String
                 self.cityLabel.text = city
-                self.getWeather(city: city)
+                self.getWeather(loc: loc)
             }
             
         }
@@ -114,12 +114,66 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     )}
     
     
-    func getWeather(city : String){
-        let urlString = "http://api.openweathermap.org/data/2.5/weather?q=\(city)"
+    func getWeather(loc: CLLocation){
+
+        let urlString = "http://api.openweathermap.org/data/2.5/weather?lat=\(loc.coordinate.latitude)&lon=\(loc.coordinate.longitude)&appid=\(appid)"
         
-        let url = NSURL(string: urlString)
-        guard let weatherData = NSData(contentsOf: url)
+        guard let url = URL(string: urlString) else {return}
         
+        let request = URLRequest(url: url)
+        
+        let config = URLSessionConfiguration.default
+        
+        let session = URLSession(configuration: config)
+        
+        let task = session.dataTask(with: request) {(data, response, error) in
+            if error != nil {
+                print (error!.localizedDescription)
+            }
+            
+
+            guard let data = data else {return}
+            
+            if let dic = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) as? NSDictionary{
+                
+
+                
+                if let dic2: [NSDictionary] = dic!["weather"] as? [NSDictionary] {
+                    
+                    if let dic4: NSDictionary = dic2[0]{
+                        let weather = dic4["main"]
+                        print("weather get!")
+                        self.weatherStr = "\(String(describing: weather!))"
+                    }
+
+                }
+                
+                if let dic3: NSDictionary = dic!["main"] as? NSDictionary {
+                    
+                    let temp = dic3["temp"]
+                    let humidity = dic3["humidity"]
+                    
+                    self.tempStr = "\(String(describing: temp!))K"
+                    self.humidityStr = "\(String(describing: humidity!))%"
+                    
+                    
+                }
+            }
+            
+            
+        }
+        
+        task.resume()
+        
+        
+        self.weatherLabel.text = weatherStr
+        self.tempLabel.text = tempStr
+        self.humidityLabel.text = humidityStr
+
+        
+        
+        
+
     }
     
 }

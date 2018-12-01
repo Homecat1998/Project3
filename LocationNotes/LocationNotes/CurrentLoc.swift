@@ -18,6 +18,13 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var longitudeLabel: UILabel!
     @IBOutlet var cityLabel: UILabel!
     
+    @IBOutlet var weatherDescLabel: UILabel!
+    @IBOutlet var tempDescLabel: UILabel!
+    @IBOutlet var humidityDescLabsel: UILabel!
+    @IBOutlet var weatherLabel: UILabel!
+    @IBOutlet var tempLabel: UILabel!
+    @IBOutlet var humidityLabel: UILabel!
+    
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
@@ -26,6 +33,10 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         latitudeDescLabel.text = NSLocalizedString("str_latitude", comment: "")
         longitudeDescLabel.text = NSLocalizedString("str_longitude", comment: "")
         cityDescLabsel.text = NSLocalizedString("str_city", comment: "")
+        
+        weatherDescLabel.text = NSLocalizedString("str_weather", comment: "")
+        tempDescLabel.text = NSLocalizedString("str_temp", comment: "")
+        weatherDescLabel.text = NSLocalizedString("str_humidity", comment: "")
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -47,7 +58,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
             longitudeLabel.text = coordinate.longitude.description
             latitudeLabel.text = coordinate.latitude.description
         }
-        
+
         let current = locations.last
         locToCity(loc: current!)
         
@@ -95,10 +106,20 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                 let mark = array.firstObject as! CLPlacemark
                 let city: String = (mark.addressDictionary! as NSDictionary).value(forKey: "City") as! String
                 self.cityLabel.text = city
+                self.getWeather(city: city)
             }
             
         }
         
     )}
+    
+    
+    func getWeather(city : String){
+        let urlString = "http://api.openweathermap.org/data/2.5/weather?q=\(city)"
+        
+        let url = NSURL(string: urlString)
+        guard let weatherData = NSData(contentsOf: url)
+        
+    }
     
 }

@@ -149,6 +149,7 @@
                         <viewLayoutGuide key="safeArea" id="6U6-wl-kWT"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="vte-wf-fNu" appends="YES" id="bjk-oO-bqC"/>
+                            <outletCollection property="gestureRecognizers" destination="igs-6l-YbG" appends="YES" id="txh-6o-boW"/>
                         </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="CurrentLocation" id="BHH-2F-SYv"/>
@@ -173,6 +174,11 @@
                         <action selector="OnTap:" destination="Y8Y-xq-Vmw" id="c2S-K3-y8I"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="igs-6l-YbG">
+                    <connections>
+                        <action selector="OnSwipe:" destination="Y8Y-xq-Vmw" id="jGZ-wj-yeX"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-465" y="-583"/>
         </scene>

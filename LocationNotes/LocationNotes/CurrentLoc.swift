@@ -204,4 +204,8 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func OnSwipe(_ sender: UISwipeGestureRecognizer) {
+        view.backgroundColor = UIColor(hue: 171/360, saturation: 0/100, brightness: 100/100, alpha: 1.0) /* #ffffff */
+    }
+    
 }

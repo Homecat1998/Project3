@@ -11,6 +11,7 @@ import UIKit
 class MyTableViewController: UITableViewController {
     
     var notes: Notes!
+    var module : LocAndWeaModule!
 
     override func viewDidLoad() {
         super.viewDidLoad()

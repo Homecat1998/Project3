@@ -139,6 +139,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zZK-1u-Q9Q" firstAttribute="centerX" secondItem="Ze7-8C-A3n" secondAttribute="centerX" id="3Xc-iM-YEu"/>
                             <constraint firstItem="zZK-1u-Q9Q" firstAttribute="centerY" secondItem="Ze7-8C-A3n" secondAttribute="centerY" multiplier="0.5" id="asH-dO-qL9"/>
@@ -146,6 +147,9 @@
                             <constraint firstItem="Muz-pt-9wO" firstAttribute="centerY" secondItem="Ze7-8C-A3n" secondAttribute="centerY" multiplier="1.25" id="wTE-vk-dAc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6U6-wl-kWT"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vte-wf-fNu" appends="YES" id="bjk-oO-bqC"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="CurrentLocation" id="BHH-2F-SYv"/>
                     <connections>
@@ -164,6 +168,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86O-b3-XgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vte-wf-fNu">
+                    <connections>
+                        <action selector="OnTap:" destination="Y8Y-xq-Vmw" id="c2S-K3-y8I"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-465" y="-583"/>
         </scene>

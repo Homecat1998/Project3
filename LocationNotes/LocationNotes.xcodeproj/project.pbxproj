@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A252F2321B336B7004B641F /* LocAndWeaModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A252F2221B336B7004B641F /* LocAndWeaModule.swift */; };
 		7AB732A121B21C0C00E53B11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AB7329F21B21C0C00E53B11 /* Localizable.strings */; };
 		7ABDFC6921B1FD5D00CCDB5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDFC6821B1FD5D00CCDB5B /* AppDelegate.swift */; };
 		7ABDFC6B21B1FD5D00CCDB5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDFC6A21B1FD5D00CCDB5B /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A252F2221B336B7004B641F /* LocAndWeaModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocAndWeaModule.swift; sourceTree = "<group>"; };
 		7AB732A021B21C0C00E53B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		7ABDFC6521B1FD5D00CCDB5B /* LocationNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABDFC6821B1FD5D00CCDB5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				7ABDFC7121B1FD5E00CCDB5B /* LaunchScreen.storyboard */,
 				7ABDFC7421B1FD5E00CCDB5B /* Info.plist */,
 				7ABDFC9A21B2027E00CCDB5B /* CurrentLoc.swift */,
+				7A252F2221B336B7004B641F /* LocAndWeaModule.swift */,
 			);
 			path = LocationNotes;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A252F2321B336B7004B641F /* LocAndWeaModule.swift in Sources */,
 				7ABDFC6B21B1FD5D00CCDB5B /* ViewController.swift in Sources */,
 				7ABDFC6921B1FD5D00CCDB5B /* AppDelegate.swift in Sources */,
 				7ABDFC9B21B2027E00CCDB5B /* CurrentLoc.swift in Sources */,

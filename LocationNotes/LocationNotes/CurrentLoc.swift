@@ -26,10 +26,13 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var tempLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
     
+    var module : LocAndWeaModule!
+    
     var locationManager: CLLocationManager!
     var weatherStr = "Waiting"
     var tempStr = ""
     var humidityStr = ""
+    var colorNum = 0
     
     let appid = "f308a3865c9e761e31a618a1eb84b7cb"
     
@@ -50,6 +53,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         
         locationManager.delegate = self
         tryStart()
+        setBGColor()
     }
     
     // MARK: - Core Location
@@ -63,6 +67,9 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
             let coordinate = location.coordinate
             longitudeLabel.text = coordinate.longitude.description
             latitudeLabel.text = coordinate.latitude.description
+            
+//            self.module.lat = coordinate.latitude.description
+//            self.module.lon = coordinate.longitude.description
         }
 
         let current = locations.last
@@ -106,6 +113,8 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                 let mark = array.firstObject as! CLPlacemark
                 let city: String = (mark.addressDictionary! as NSDictionary).value(forKey: "City") as! String
                 self.cityLabel.text = city
+//                self.module.city = city
+                
                 self.getWeather(loc: loc)
             }
             
@@ -140,7 +149,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                 
                 if let dic2: [NSDictionary] = dic!["weather"] as? [NSDictionary] {
                     
-                    if let dic4: NSDictionary = dic2[0]{
+                    if let dic4 : NSDictionary = dic2[0]{
                         let weather = dic4["main"]
                         print("weather get!")
                         self.weatherStr = "\(String(describing: weather!))"
@@ -164,7 +173,9 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         }
         
         task.resume()
-        
+//        self.module.humidity = humidityStr
+//        self.module.temp = tempStr
+//        self.module.weather = weatherStr
         
         self.weatherLabel.text = weatherStr
         self.tempLabel.text = tempStr
@@ -174,6 +185,23 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         
         
 
+    }
+    @IBAction func OnTap(_ sender: UITapGestureRecognizer) {
+        colorNum = colorNum + 1
+        setBGColor()
+    }
+    
+    func setBGColor(){
+        if (colorNum == 0) {
+            view.backgroundColor = UIColor(hue: 74/360, saturation: 100/100, brightness: 80/100, alpha: 1.0) /* #9ccc00 */
+        } else if (colorNum == 1) {
+            view.backgroundColor = UIColor(hue: 173/360, saturation: 100/100, brightness: 82/100, alpha: 1.0) /* #00d1b8 */
+        } else if (colorNum == 2) {
+            view.backgroundColor = UIColor(hue: 199/360, saturation: 100/100, brightness: 81/100, alpha: 1.0) /* #008dce */
+        } else if (colorNum == 3) {
+            colorNum = 0
+            view.backgroundColor = UIColor(hue: 74/360, saturation: 100/100, brightness: 80/100, alpha: 1.0) /* #9ccc00 */
+        }
     }
     
 }

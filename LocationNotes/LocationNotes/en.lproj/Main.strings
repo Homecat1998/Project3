@@ -1,0 +1,12 @@
+"str_ok"                            = "OK";
+"str_start"                         = "Start";
+"str_stop"                          = "Stop";
+"str_latitude"                      = "Latitude: ";
+"str_longitude"                     = "Longitude: ";
+"str_city"                          = "City: ";
+
+"str_settings"                      = "Settings";
+
+"str_CLNoService"                   = "No Location Services";
+"str_CLDeniedPerm"                  = "This app was denied permission.";
+"str_CLBlocked"                     = "This app is blocked by parental controls.";

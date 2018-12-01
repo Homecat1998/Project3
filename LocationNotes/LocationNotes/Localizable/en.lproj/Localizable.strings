@@ -15,6 +15,7 @@
 "str_humidity"                      = "Humidity: ";
 "str_temp"                          = "Temp: ";
 "str_weather"                       = "Weather: ";
+"str_title"                         = "My Notes";
 
 
 "str_settings"                      = "Settings";

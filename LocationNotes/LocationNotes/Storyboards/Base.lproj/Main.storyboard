@@ -14,14 +14,91 @@
         <!--About-->
         <scene sceneID="neE-VO-y94">
             <objects>
-                <viewController id="aD3-dT-zDK" sceneMemberID="viewController">
+                <viewController id="aD3-dT-zDK" customClass="AboutViewController" customModule="LocationNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2W7-Xo-AnO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_AppName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZN-Rv-7ub">
+                                <rect key="frame" x="12" y="48.5" width="351" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_AppVer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67x-E2-wBc">
+                                <rect key="frame" x="12" y="96.5" width="351" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_Build" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lV4-Of-3Vl">
+                                <rect key="frame" x="12" y="132.5" width="351" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="YSY-St-FUI">
+                                <rect key="frame" x="137" y="168.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ASh-VU-fAT"/>
+                                    <constraint firstAttribute="width" constant="100" id="ipa-FL-W58"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_LaunchDate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-ja-v4v">
+                                <rect key="frame" x="12" y="280.5" width="351" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_CopyRight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o12-iA-KEE">
+                                <rect key="frame" x="12" y="588" width="351" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="str_LaunchNum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPi-aa-6IS">
+                                <rect key="frame" x="12" y="310.5" width="351" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0ZN-Rv-7ub" firstAttribute="centerX" secondItem="2W7-Xo-AnO" secondAttribute="centerX" id="3RG-Dl-S2O"/>
+                            <constraint firstItem="MPi-aa-6IS" firstAttribute="top" secondItem="5Oe-ja-v4v" secondAttribute="bottom" constant="12" id="3vN-bT-1m7"/>
+                            <constraint firstItem="MPi-aa-6IS" firstAttribute="leading" secondItem="QP9-MI-y4b" secondAttribute="leading" constant="12" id="4eg-o3-Pqe"/>
+                            <constraint firstItem="o12-iA-KEE" firstAttribute="leading" secondItem="QP9-MI-y4b" secondAttribute="leading" constant="12" id="CIH-Og-2kt"/>
+                            <constraint firstItem="lV4-Of-3Vl" firstAttribute="leading" secondItem="QP9-MI-y4b" secondAttribute="leading" constant="12" id="D5n-bN-kVX"/>
+                            <constraint firstItem="67x-E2-wBc" firstAttribute="leading" secondItem="QP9-MI-y4b" secondAttribute="leading" constant="12" id="HeT-eb-Cne"/>
+                            <constraint firstItem="0ZN-Rv-7ub" firstAttribute="centerY" secondItem="2W7-Xo-AnO" secondAttribute="centerY" multiplier="0.2" id="IZ4-fs-4Kj"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="trailing" secondItem="lV4-Of-3Vl" secondAttribute="trailing" constant="12" id="JcB-3W-YH5"/>
+                            <constraint firstItem="67x-E2-wBc" firstAttribute="top" secondItem="0ZN-Rv-7ub" secondAttribute="bottom" constant="12" id="KSK-jM-l6u"/>
+                            <constraint firstItem="YSY-St-FUI" firstAttribute="top" secondItem="lV4-Of-3Vl" secondAttribute="bottom" constant="12" id="LWN-Yv-d0P"/>
+                            <constraint firstItem="67x-E2-wBc" firstAttribute="centerX" secondItem="2W7-Xo-AnO" secondAttribute="centerX" id="M1U-9P-6At"/>
+                            <constraint firstItem="5Oe-ja-v4v" firstAttribute="leading" secondItem="QP9-MI-y4b" secondAttribute="leading" constant="12" id="Mw5-Us-WQw"/>
+                            <constraint firstItem="YSY-St-FUI" firstAttribute="centerX" secondItem="2W7-Xo-AnO" secondAttribute="centerX" id="Oed-K5-OL7"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="trailing" secondItem="o12-iA-KEE" secondAttribute="trailing" constant="12" id="Wbr-Nd-3RZ"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="trailing" secondItem="67x-E2-wBc" secondAttribute="trailing" constant="12" id="YNq-Um-r8F"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="trailing" secondItem="5Oe-ja-v4v" secondAttribute="trailing" constant="12" id="i3e-Lr-1P7"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="bottom" secondItem="o12-iA-KEE" secondAttribute="bottom" constant="12" id="lxQ-4j-yM6"/>
+                            <constraint firstItem="lV4-Of-3Vl" firstAttribute="top" secondItem="67x-E2-wBc" secondAttribute="bottom" constant="12" id="m2h-Fa-3O3"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="trailing" secondItem="0ZN-Rv-7ub" secondAttribute="trailing" constant="12" id="pbE-RL-zjh"/>
+                            <constraint firstItem="5Oe-ja-v4v" firstAttribute="top" secondItem="YSY-St-FUI" secondAttribute="bottom" constant="12" id="rB9-ij-pec"/>
+                            <constraint firstItem="QP9-MI-y4b" firstAttribute="trailing" secondItem="MPi-aa-6IS" secondAttribute="trailing" constant="12" id="rqP-3K-Oq5"/>
+                            <constraint firstItem="0ZN-Rv-7ub" firstAttribute="leading" secondItem="QP9-MI-y4b" secondAttribute="leading" constant="12" id="ztl-Qv-AtC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QP9-MI-y4b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" id="N3h-O4-cbM"/>
+                    <tabBarItem key="tabBarItem" title="About" image="aboutIcon" landscapeImage="aboutIcon" largeContentSizeImage="aboutIcon" id="N3h-O4-cbM"/>
+                    <connections>
+                        <outlet property="appBuild" destination="lV4-Of-3Vl" id="xUW-sF-7Fx"/>
+                        <outlet property="appName" destination="0ZN-Rv-7ub" id="XPR-26-b26"/>
+                        <outlet property="appVer" destination="67x-E2-wBc" id="wh7-JB-ru4"/>
+                        <outlet property="copyRight" destination="o12-iA-KEE" id="AuV-l6-7Rc"/>
+                        <outlet property="launchDate" destination="5Oe-ja-v4v" id="MRF-OY-CvX"/>
+                        <outlet property="launchNum" destination="MPi-aa-6IS" id="Ehq-ml-qw7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zto-9D-udx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,7 +229,7 @@
                             <outletCollection property="gestureRecognizers" destination="igs-6l-YbG" appends="YES" id="txh-6o-boW"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="CurrentLocation" id="BHH-2F-SYv"/>
+                    <tabBarItem key="tabBarItem" title="CurrentLocation" image="currentIcon" landscapeImage="currentIcon" largeContentSizeImage="currentIcon" id="BHH-2F-SYv"/>
                     <connections>
                         <outlet property="cityDescLabel" destination="cs2-L7-BeV" id="qIg-Yu-fOD"/>
                         <outlet property="cityLabel" destination="Wbo-71-IUg" id="LMe-9f-sNF"/>
@@ -244,7 +321,7 @@
         <scene sceneID="krL-iC-IMi">
             <objects>
                 <navigationController id="HFb-Cf-zfb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="MyNotes" id="SLF-in-Nni"/>
+                    <tabBarItem key="tabBarItem" title="MyNotes" image="noteIcon" landscapeImage="noteIcon" largeContentSizeImage="noteIcon" id="SLF-in-Nni"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FPB-dn-rUG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -277,4 +354,10 @@
             <point key="canvasLocation" x="-1417" y="-251"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="1024" height="1024"/>
+        <image name="aboutIcon" width="32" height="32"/>
+        <image name="currentIcon" width="32" height="32"/>
+        <image name="noteIcon" width="32" height="32"/>
+    </resources>
 </document>

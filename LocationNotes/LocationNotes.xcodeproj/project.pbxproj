@@ -20,6 +20,7 @@
 		7ABDFC7E21B1FD5E00CCDB5B /* LocationNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDFC7D21B1FD5E00CCDB5B /* LocationNotesTests.swift */; };
 		7ABDFC8921B1FD5E00CCDB5B /* LocationNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDFC8821B1FD5E00CCDB5B /* LocationNotesUITests.swift */; };
 		7ABDFC9B21B2027E00CCDB5B /* CurrentLoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDFC9A21B2027E00CCDB5B /* CurrentLoc.swift */; };
+		7AF0D01521B4666A007ABD1C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0D01421B4666A007ABD1C /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7ABDFC8821B1FD5E00CCDB5B /* LocationNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotesUITests.swift; sourceTree = "<group>"; };
 		7ABDFC8A21B1FD5E00CCDB5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ABDFC9A21B2027E00CCDB5B /* CurrentLoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLoc.swift; sourceTree = "<group>"; };
+		7AF0D01421B4666A007ABD1C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				7A252F2821B348BD004B641F /* DetailViewController.swift */,
 				7A252F2421B34124004B641F /* MyTableViewController.swift */,
 				7ABDFC9A21B2027E00CCDB5B /* CurrentLoc.swift */,
+				7AF0D01421B4666A007ABD1C /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				7A252F2521B34124004B641F /* MyTableViewController.swift in Sources */,
 				7A3D2D7821B3756300CD0E28 /* BundleExt.swift in Sources */,
 				7ABDFC9B21B2027E00CCDB5B /* CurrentLoc.swift in Sources */,
+				7AF0D01521B4666A007ABD1C /* AboutViewController.swift in Sources */,
 				7A252F2921B348BD004B641F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

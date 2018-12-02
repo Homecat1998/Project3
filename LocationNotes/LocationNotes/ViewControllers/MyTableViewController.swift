@@ -31,6 +31,9 @@ class MyTableViewController: UITableViewController {
                 
                 if let indexPath = tableView.indexPathForSelectedRow {
                     detailViewController.noteItem = notes?.noteList[indexPath.row]
+                    detailViewController.bgColor = module.bgColor
+                    
+                    
                 }
             }
         }

@@ -17,4 +17,5 @@ class LocAndWeaModule {
     var lon = ""
     var city = ""
     var location : CLLocation!
+    var bgColor = 0
 }

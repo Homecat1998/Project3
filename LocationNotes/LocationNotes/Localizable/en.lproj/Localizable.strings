@@ -17,6 +17,7 @@
 "str_weather"                       = "Weather: ";
 "str_title"                         = "My Notes";
 "str_note"                          = "Notes here";
+"str_yourNote"                      = "Your note:";
 
 "str_save"                          = "Save";
 "str_cancel"                        = "Cancel";

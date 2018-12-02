@@ -310,22 +310,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kGI-fu-6Tn">
-                                <rect key="frame" x="12" y="361" width="351" height="245"/>
-                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PLK-0T-cjp">
+                                <rect key="frame" x="12" y="88" width="351" height="518"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xcz-Wy-faG">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="198"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIa-4E-XAQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xo-gt-Rkf">
+                                                <rect key="frame" x="0.0" y="42" width="351" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMt-GB-iMT">
+                                                <rect key="frame" x="0.0" y="84" width="351" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ka-u3-KPe">
+                                                <rect key="frame" x="0.0" y="126" width="351" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6R-Aw-loH">
+                                                <rect key="frame" x="0.0" y="168" width="351" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="200" verticalHuggingPriority="200" horizontalCompressionResistancePriority="700" verticalCompressionResistancePriority="700" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kGI-fu-6Tn">
+                                        <rect key="frame" x="0.0" y="228" width="351" height="290"/>
+                                    </mapView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Xcz-Wy-faG" firstAttribute="leading" secondItem="PLK-0T-cjp" secondAttribute="leading" id="2aU-oQ-sOZ"/>
+                                    <constraint firstItem="Xcz-Wy-faG" firstAttribute="top" secondItem="PLK-0T-cjp" secondAttribute="top" id="A9n-yI-ooa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xcz-Wy-faG" secondAttribute="trailing" id="h22-k9-0IO"/>
+                                </constraints>
+                                <variation key="heightClass=compact" axis="horizontal" distribution="fillEqually"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kGI-fu-6Tn" firstAttribute="leading" secondItem="0gk-8T-jfO" secondAttribute="leading" constant="12" id="1k3-Ng-7cv"/>
-                            <constraint firstItem="kGI-fu-6Tn" firstAttribute="centerY" secondItem="NOF-FX-Rcd" secondAttribute="centerY" multiplier="1.45" id="99p-WE-gbT"/>
-                            <constraint firstItem="0gk-8T-jfO" firstAttribute="trailing" secondItem="kGI-fu-6Tn" secondAttribute="trailing" constant="12" id="TmG-yI-omJ"/>
-                            <constraint firstItem="0gk-8T-jfO" firstAttribute="bottom" secondItem="kGI-fu-6Tn" secondAttribute="bottom" constant="12" id="VZg-UF-7LK"/>
-                            <constraint firstItem="kGI-fu-6Tn" firstAttribute="centerX" secondItem="NOF-FX-Rcd" secondAttribute="centerX" id="u0m-Dd-AX3"/>
+                            <constraint firstItem="0gk-8T-jfO" firstAttribute="trailing" secondItem="PLK-0T-cjp" secondAttribute="trailing" constant="12" id="65J-EP-VXR"/>
+                            <constraint firstItem="PLK-0T-cjp" firstAttribute="top" secondItem="0gk-8T-jfO" secondAttribute="top" constant="24" id="BEd-ce-VbN"/>
+                            <constraint firstItem="0gk-8T-jfO" firstAttribute="bottom" secondItem="PLK-0T-cjp" secondAttribute="bottom" constant="12" id="HC7-EO-R9t"/>
+                            <constraint firstItem="PLK-0T-cjp" firstAttribute="leading" secondItem="0gk-8T-jfO" secondAttribute="leading" constant="12" id="kbp-ZQ-Ujb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0gk-8T-jfO"/>
                     </view>
                     <connections>
+                        <outlet property="city" destination="2xo-gt-Rkf" id="QvZ-Iw-jf0"/>
+                        <outlet property="date" destination="WIa-4E-XAQ" id="wcH-4h-Plp"/>
                         <outlet property="mapView" destination="kGI-fu-6Tn" id="svY-VF-UZ5"/>
+                        <outlet property="note" destination="o6R-Aw-loH" id="cSQ-di-rLr"/>
+                        <outlet property="noteTitle" destination="6Ka-u3-KPe" id="oAx-21-Q3i"/>
+                        <outlet property="temp" destination="UMt-GB-iMT" id="g0U-gr-NBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmw-QJ-a9w" userLabel="First Responder" sceneMemberID="firstResponder"/>

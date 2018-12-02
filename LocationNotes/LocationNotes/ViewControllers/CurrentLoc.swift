@@ -34,7 +34,6 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     var weatherStr = "Waiting"
     var tempStr = "Waiting"
     var humidityStr = "Waiting"
-    var colorNum = 0
     
     let appid = "f308a3865c9e761e31a618a1eb84b7cb"
     
@@ -59,6 +58,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         
         locationManager.delegate = self
         tryStart()
+        module.bgColor = 0
         setBGColor()
     }
     
@@ -206,19 +206,20 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func OnTap(_ sender: UITapGestureRecognizer) {
-        colorNum = colorNum + 1
+        
+        module.bgColor = module.bgColor + 1
         setBGColor()
     }
     
     func setBGColor(){
-        if (colorNum == 0) {
+        if (module.bgColor == 0) {
             view.backgroundColor = UIColor(hue: 74/360, saturation: 100/100, brightness: 80/100, alpha: 1.0) /* #9ccc00 */
-        } else if (colorNum == 1) {
+        } else if (module.bgColor == 1) {
             view.backgroundColor = UIColor(hue: 173/360, saturation: 100/100, brightness: 82/100, alpha: 1.0) /* #00d1b8 */
-        } else if (colorNum == 2) {
+        } else if (module.bgColor == 2) {
             view.backgroundColor = UIColor(hue: 199/360, saturation: 100/100, brightness: 81/100, alpha: 1.0) /* #008dce */
-        } else if (colorNum == 3) {
-            colorNum = 0
+        } else if (module.bgColor == 3) {
+            module.bgColor = 0
             view.backgroundColor = UIColor(hue: 74/360, saturation: 100/100, brightness: 80/100, alpha: 1.0) /* #9ccc00 */
         }
     }

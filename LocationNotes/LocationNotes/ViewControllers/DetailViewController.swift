@@ -7,14 +7,40 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class DetailViewController: UIViewController {
     
-    var noteItem : NoteItem?
+    var noteItem : NoteItem!
     
-
+    var locationManager : CLLocationManager = CLLocationManager()
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mapView.mapType = MKMapType.standard
+        
+        // set the zoom
+        let latDel = 0.05
+        let lonDel = 0.05
+        let currentZoom: MKCoordinateSpan = MKCoordinateSpanMake(latDel, lonDel)
+        
+        
+        // set the centre
+        let latValue = Double(noteItem!.lat)
+        let lonValue = Double(noteItem!.lon)
+        let centre : CLLocation = CLLocation(latitude: latValue!, longitude: lonValue!)
+        
+        let region : MKCoordinateRegion = MKCoordinateRegion(center: centre.coordinate, span: currentZoom)
+        mapView.setRegion(region, animated: true)
+        
+        // put an anno
+        let anno = MKPointAnnotation()
+        anno.coordinate = centre.coordinate
+        
+        mapView.addAnnotation(anno)
 
         // Do any additional setup after loading the view.
     }

@@ -309,9 +309,24 @@
                     <view key="view" contentMode="scaleToFill" id="NOF-FX-Rcd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kGI-fu-6Tn">
+                                <rect key="frame" x="12" y="361" width="351" height="245"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kGI-fu-6Tn" firstAttribute="leading" secondItem="0gk-8T-jfO" secondAttribute="leading" constant="12" id="1k3-Ng-7cv"/>
+                            <constraint firstItem="kGI-fu-6Tn" firstAttribute="centerY" secondItem="NOF-FX-Rcd" secondAttribute="centerY" multiplier="1.45" id="99p-WE-gbT"/>
+                            <constraint firstItem="0gk-8T-jfO" firstAttribute="trailing" secondItem="kGI-fu-6Tn" secondAttribute="trailing" constant="12" id="TmG-yI-omJ"/>
+                            <constraint firstItem="0gk-8T-jfO" firstAttribute="bottom" secondItem="kGI-fu-6Tn" secondAttribute="bottom" constant="12" id="VZg-UF-7LK"/>
+                            <constraint firstItem="kGI-fu-6Tn" firstAttribute="centerX" secondItem="NOF-FX-Rcd" secondAttribute="centerX" id="u0m-Dd-AX3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0gk-8T-jfO"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="kGI-fu-6Tn" id="svY-VF-UZ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmw-QJ-a9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

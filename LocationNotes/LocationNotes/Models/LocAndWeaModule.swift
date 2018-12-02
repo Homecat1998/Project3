@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class LocAndWeaModule {
     var weather = ""
@@ -15,4 +16,5 @@ class LocAndWeaModule {
     var lat = ""
     var lon = ""
     var city = ""
+    var location : CLLocation!
 }

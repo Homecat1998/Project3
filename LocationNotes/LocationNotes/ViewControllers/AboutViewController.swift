@@ -27,10 +27,14 @@ class AboutViewController: UIViewController {
         appVer.text = Bundle.main.version
         appBuild.text = Bundle.main.build
         copyRight.text = Bundle.main.copyright
-        launchNum.text = defaults.integer(forKey: dNumLaunches).description
-        launchDate.text = defaults.string(forKey: dAccessDate)
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        launchNum.text = defaults.integer(forKey: dNumLaunches).description
+        launchDate.text = defaults.string(forKey: dAccessDate)
     }
 
     override func didReceiveMemoryWarning() {

@@ -28,10 +28,12 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     
     var module : LocAndWeaModule!
     
+    var weatherGet = 0
+    
     var locationManager: CLLocationManager!
     var weatherStr = "Waiting"
-    var tempStr = ""
-    var humidityStr = ""
+    var tempStr = "Waiting"
+    var humidityStr = "Waiting"
     var colorNum = 0
     
     let appid = "f308a3865c9e761e31a618a1eb84b7cb"
@@ -46,6 +48,10 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         weatherDescLabel.text = NSLocalizedString("str_weather", comment: "")
         tempDescLabel.text = NSLocalizedString("str_temp", comment: "")
         humidityDescLabel.text = NSLocalizedString("str_humidity", comment: "")
+        
+        weatherLabel.text = weatherStr
+        tempLabel.text = tempStr
+        humidityLabel.text = humidityStr
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -73,7 +79,8 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         }
 
         let current = locations.last
-        locToCity(loc: current!)
+        module.location = current
+        locToCity()
         
     }
     
@@ -105,7 +112,8 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func locToCity(loc: CLLocation){
+    func locToCity(){
+        let loc = module.location!
         let geoCoder :CLGeocoder = CLGeocoder()
         geoCoder.reverseGeocodeLocation(loc, completionHandler: {(placemark, error) -> Void in
             if(error == nil){
@@ -115,7 +123,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                 self.cityLabel.text = city
                 self.module.city = city
                 
-                    self.getWeather(loc: loc)
+                self.getWeather()
             }
             
         }
@@ -123,7 +131,9 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     )}
     
     
-    func getWeather(loc: CLLocation){
+    func getWeather(){
+        
+        let loc = module.location!
 
         let urlString = "http://api.openweathermap.org/data/2.5/weather?lat=\(loc.coordinate.latitude)&lon=\(loc.coordinate.longitude)&appid=\(appid)"
         
@@ -152,6 +162,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                     if let dic4 : NSDictionary = dic2[0]{
                         let weather = dic4["main"]
                         print("weather get!")
+                        self.weatherGet = 1
                         self.weatherStr = "\(String(describing: weather!))"
                     }
 
@@ -171,7 +182,6 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
             
             
         }
-        
         task.resume()
         self.module.humidity = humidityStr
         self.module.temp = tempStr
@@ -180,12 +190,18 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         self.weatherLabel.text = weatherStr
         self.tempLabel.text = tempStr
         self.humidityLabel.text = humidityStr
-
         
+        checkGet()
         
-        
-
     }
+    
+    func checkGet(){
+        usleep(500000)
+        while (weatherGet == 0) {
+            getWeather()
+        }
+    }
+    
     
     
     

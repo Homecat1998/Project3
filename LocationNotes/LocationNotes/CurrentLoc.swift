@@ -68,8 +68,8 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
             longitudeLabel.text = coordinate.longitude.description
             latitudeLabel.text = coordinate.latitude.description
             
-//            self.module.lat = coordinate.latitude.description
-//            self.module.lon = coordinate.longitude.description
+            self.module.lat = coordinate.latitude.description
+            self.module.lon = coordinate.longitude.description
         }
 
         let current = locations.last
@@ -113,9 +113,9 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                 let mark = array.firstObject as! CLPlacemark
                 let city: String = (mark.addressDictionary! as NSDictionary).value(forKey: "City") as! String
                 self.cityLabel.text = city
-//                self.module.city = city
+                self.module.city = city
                 
-                self.getWeather(loc: loc)
+                    self.getWeather(loc: loc)
             }
             
         }
@@ -173,9 +173,9 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         }
         
         task.resume()
-//        self.module.humidity = humidityStr
-//        self.module.temp = tempStr
-//        self.module.weather = weatherStr
+        self.module.humidity = humidityStr
+        self.module.temp = tempStr
+        self.module.weather = weatherStr
         
         self.weatherLabel.text = weatherStr
         self.tempLabel.text = tempStr
@@ -186,6 +186,9 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         
 
     }
+    
+    
+    
     @IBAction func OnTap(_ sender: UITapGestureRecognizer) {
         colorNum = colorNum + 1
         setBGColor()

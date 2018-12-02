@@ -25,7 +25,7 @@ struct NoteItem: Equatable, Codable {
     var lon : String
     var city : String
     var note : String
-    var date : Date
+    var date : String
 }
 
 class Notes: Codable {
@@ -35,7 +35,13 @@ class Notes: Codable {
     
     func add(note: String, weather: String, temp: String, humidity: String, lat: String, lon: String, city: String) {
         
-        let noteItem = NoteItem(weather: weather, temp: temp, humidity: humidity, lat: lat, lon: lon, city: city, note: note, date: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale.current
+        let currentDate = Date()
+        
+        let noteItem = NoteItem(weather: weather, temp: temp, humidity: humidity, lat: lat, lon: lon, city: city, note: note, date: dateFormatter.string(from: currentDate))
         noteList.insert(noteItem, at: 0)
     }
     

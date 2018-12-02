@@ -15,7 +15,7 @@ class MyTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.title = NSLocalizedString("str_title", comment: "")
+        self.title = NSLocalizedString("str_title", comment: "")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,6 +40,79 @@ class MyTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    func addItemAlert() {
+        
+        var notEmpty1 = false
+        
+        let alert = UIAlertController(title: NSLocalizedString("str_prompt", comment: ""), message: nil, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title:NSLocalizedString("str_save", comment: ""), style: .destructive, handler: { _ in
+            
+            if let noteField = alert.textFields?[0], let note = noteField.text, !note.isEmpty {
+                
+                self.notes.add(note: note, weather: self.module.weather, temp: self.module.temp, humidity: self.module.humidity, lat: self.module.lat, lon: self.module.lon, city: self.module.city)
+                self.tableView.reloadData()
+            }
+        })
+        
+        
+        
+        alert.addTextField(configurationHandler: { (textField) in
+            textField.text = ""
+            saveAction.isEnabled = false
+            textField.placeholder = NSLocalizedString("str_note", comment: "")
+            NotificationCenter.default.addObserver(forName: NSNotification.Name.UITextFieldTextDidChange, object: textField, queue: OperationQueue.main) { _ in
+                notEmpty1 = !textField.text!.isEmpty
+                saveAction.isEnabled = notEmpty1
+            }
+        })
+        
+        
+        
+        alert.addAction(saveAction)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("str_cancel", comment: ""), style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    
+    
+    // Deletion Alert
+    
+    func deletionAlert(completion: @escaping (UIAlertAction) -> Void) {
+        
+        let alert = UIAlertController(title: NSLocalizedString("str_warning", comment: ""),
+                                      message: "",
+                                      preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: NSLocalizedString("str_delete", comment: ""),
+                                         style: .destructive, handler: completion)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("str_cancel", comment: ""),
+                                         style: .cancel, handler:nil)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        
+        /*
+         **  In this case we need a source for the popover as well, but don't have a handy UIBarButtonItem.
+         **  As alternative we therefore use the sourceView/sourceRect combination and specify a rectangel
+         **  centered in the view of our viewController.
+         */
+        alert.popoverPresentationController?.permittedArrowDirections = []
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRect(x: self.view.frame.midX, y: self.view.frame.midY, width: 0, height: 0)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    
 
     // MARK: - Table view data source
 
@@ -62,8 +135,9 @@ class MyTableViewController: UITableViewController {
         
         let city = note.city
         let time = note.date
+        print(time)
         
-        cell.detailTextLabel?.text = "\(city), \(time)"
+        cell.textLabel?.text = "\(time.description),  \(city.description)"
         
 
         return cell
@@ -78,8 +152,18 @@ class MyTableViewController: UITableViewController {
     */
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        notes.removeItem(at: indexPath.row)
-        self.tableView.reloadData()
+        
+        if editingStyle == .delete {
+            
+            if (notes?.noteList[indexPath.row]) != nil {
+                deletionAlert(completion: { _ in
+                    self.notes.removeItem(at: indexPath.row)
+                    self.tableView.reloadData()
+                })
+            }
+        }
+        
+
     }
 
     /*
@@ -113,5 +197,6 @@ class MyTableViewController: UITableViewController {
     
     @IBAction func addItems(_ sender: UIBarButtonItem) {
         print("adding")
+        addItemAlert()
     }
 }

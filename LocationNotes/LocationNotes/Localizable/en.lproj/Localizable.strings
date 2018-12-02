@@ -16,6 +16,14 @@
 "str_temp"                          = "Temp: ";
 "str_weather"                       = "Weather: ";
 "str_title"                         = "My Notes";
+"str_note"                          = "Notes here";
+
+"str_save"                          = "Save";
+"str_cancel"                        = "Cancel";
+"str_warning"                       = "Do you really want to delete?";
+"str_delete"                        = "Delete";
+
+"str_prompt"                        = "Please enter your note!";
 
 
 "str_settings"                      = "Settings";

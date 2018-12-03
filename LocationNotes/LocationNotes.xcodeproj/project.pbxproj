@@ -12,6 +12,7 @@
 		7A252F2721B34159004B641F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A252F2621B34159004B641F /* Model.swift */; };
 		7A252F2921B348BD004B641F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A252F2821B348BD004B641F /* DetailViewController.swift */; };
 		7A3D2D7821B3756300CD0E28 /* BundleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3D2D7721B3756300CD0E28 /* BundleExt.swift */; };
+		7A53C1E121B5DCC7008F0F58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A53C1DF21B5DCC7008F0F58 /* Localizable.strings */; };
 		7AB732A121B21C0C00E53B11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AB7329F21B21C0C00E53B11 /* Localizable.strings */; };
 		7ABDFC6921B1FD5D00CCDB5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABDFC6821B1FD5D00CCDB5B /* AppDelegate.swift */; };
 		7ABDFC6E21B1FD5D00CCDB5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABDFC6C21B1FD5D00CCDB5B /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		7A252F2621B34159004B641F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7A252F2821B348BD004B641F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7A3D2D7721B3756300CD0E28 /* BundleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExt.swift; sourceTree = "<group>"; };
+		7A53C1E021B5DCC7008F0F58 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		7AB732A021B21C0C00E53B11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		7ABDFC6521B1FD5D00CCDB5B /* LocationNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABDFC6821B1FD5D00CCDB5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,10 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A53C1DE21B5DC90008F0F58 /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				7A53C1DF21B5DCC7008F0F58 /* Localizable.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
 		7AB7329C21B21B9E00E53B11 /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
-				7AB7329E21B21BB000E53B11 /* zh.proj */,
+				7A53C1DE21B5DC90008F0F58 /* zh-Hans.lproj */,
 				7AB7329D21B21BA800E53B11 /* en.lproj */,
 			);
 			path = Localizable;
@@ -103,13 +113,6 @@
 				7AB7329F21B21C0C00E53B11 /* Localizable.strings */,
 			);
 			path = en.lproj;
-			sourceTree = "<group>";
-		};
-		7AB7329E21B21BB000E53B11 /* zh.proj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = zh.proj;
 			sourceTree = "<group>";
 		};
 		7ABDFC5C21B1FD5D00CCDB5B = {
@@ -280,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7ABDFC5C21B1FD5D00CCDB5B;
 			productRefGroup = 7ABDFC6621B1FD5D00CCDB5B /* Products */;
@@ -298,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A53C1E121B5DCC7008F0F58 /* Localizable.strings in Resources */,
 				7ABDFC7321B1FD5E00CCDB5B /* LaunchScreen.storyboard in Resources */,
 				7AB732A121B21C0C00E53B11 /* Localizable.strings in Resources */,
 				7ABDFC7021B1FD5E00CCDB5B /* Assets.xcassets in Resources */,
@@ -369,6 +374,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7A53C1DF21B5DCC7008F0F58 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A53C1E021B5DCC7008F0F58 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7AB7329F21B21C0C00E53B11 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

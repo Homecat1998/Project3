@@ -23,6 +23,8 @@ class AboutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
         appName.text = Bundle.main.displayName
         appVer.text = Bundle.main.version
         appBuild.text = Bundle.main.build

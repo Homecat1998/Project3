@@ -43,11 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             if let currentController = tabBarController.viewControllers?.first as? CurrentLoc{
                 currentController.module = module
+                currentController.title = NSLocalizedString("str_currentLocation", comment: "")
+            }
+            
+            if let aboutController = tabBarController.viewControllers?.last as? AboutViewController {
+                aboutController.title = NSLocalizedString("str_about", comment: "")
             }
             
             if let navController = tabBarController.viewControllers?[1] as? UINavigationController{
                 
                 if let tableController = navController.viewControllers.first as? MyTableViewController {
+                    tableController.title = NSLocalizedString("str_title", comment: "")
+
                     tableController.module = module
                     tableController.notes = notes
                 }

@@ -16,6 +16,8 @@
 "str_temp"                          = "Temp: ";
 "str_weather"                       = "Weather: ";
 "str_title"                         = "My Notes";
+"str_currentLocation"               = "CurrentLocation";
+"str_about"                         = "About";
 "str_note"                          = "Notes here";
 "str_yourNote"                      = "Your note:";
 

@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  LocationNotes
+
+  Created by Zhong, Zhetao on 12/3/18.
+  Copyright © 2018 Zhong, Zhetao. All rights reserved.
+*/
+"str_ok"                            = "OK";
+"str_start"                         = "开始";
+"str_stop"                          = "停止";
+"str_latitude"                      = "纬度：";
+"str_longitude"                     = "经度：";
+"str_city"                          = "城市：";
+
+"str_humidity"                      = "湿度：";
+"str_temp"                          = "温度：";
+"str_weather"                       = "天气：";
+"str_title"                         = "我的记录";
+"str_currentLocation"               = "当前位置";
+"str_about"                         = "关于";
+"str_note"                          = "请在这里输入";
+"str_yourNote"                      = "内容：";
+
+"str_save"                          = "保存";
+"str_cancel"                        = "取消";
+"str_warning"                       = "请确认是否删除？";
+"str_delete"                        = "删除";
+
+"str_prompt"                        = "请输入记录内容";
+
+
+"str_settings"                      = "设置";
+
+"str_CLNoService"                   = "没有定位服务";
+"str_CLDeniedPerm"                  = "定位请求被拒绝。";
+"str_CLBlocked"                     = "被家长模式锁定。";

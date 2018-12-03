@@ -40,6 +40,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         latitudeDescLabel.text = NSLocalizedString("str_latitude", comment: "")
         longitudeDescLabel.text = NSLocalizedString("str_longitude", comment: "")
         cityDescLabel.text = NSLocalizedString("str_city", comment: "")

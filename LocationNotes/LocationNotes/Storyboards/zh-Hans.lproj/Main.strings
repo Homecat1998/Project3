@@ -1,0 +1,81 @@
+
+/* Class = "UILabel"; text = "str_AppName"; ObjectID = "0ZN-Rv-7ub"; */
+"0ZN-Rv-7ub.text" = "str_AppName";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1Ob-gc-nBs"; */
+"1Ob-gc-nBs.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2xo-gt-Rkf"; */
+"2xo-gt-Rkf.text" = "Label";
+
+/* Class = "UILabel"; text = "str_LaunchDate"; ObjectID = "5Oe-ja-v4v"; */
+"5Oe-ja-v4v.text" = "str_LaunchDate";
+
+/* Class = "UILabel"; text = "str_AppVer"; ObjectID = "67x-E2-wBc"; */
+"67x-E2-wBc.text" = "str_AppVer";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Ka-u3-KPe"; */
+"6Ka-u3-KPe.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "CurrentLocation"; ObjectID = "BHH-2F-SYv"; */
+"BHH-2F-SYv.title" = "CurrentLocation";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IPv-UL-f5a"; */
+"IPv-UL-f5a.text" = "Label";
+
+/* Class = "UILabel"; text = "str_LaunchNum"; ObjectID = "MPi-aa-6IS"; */
+"MPi-aa-6IS.text" = "str_LaunchNum";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MxM-Ke-lyb"; */
+"MxM-Ke-lyb.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "N3h-O4-cbM"; */
+"N3h-O4-cbM.title" = "About";
+
+/* Class = "UITabBarItem"; title = "MyNotes"; ObjectID = "SLF-in-Nni"; */
+"SLF-in-Nni.title" = "MyNotes";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UMt-GB-iMT"; */
+"UMt-GB-iMT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WIa-4E-XAQ"; */
+"WIa-4E-XAQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wbo-71-IUg"; */
+"Wbo-71-IUg.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c9h-dK-SQK"; */
+"c9h-dK-SQK.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cs2-L7-BeV"; */
+"cs2-L7-BeV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fj5-7Z-oHB"; */
+"fj5-7Z-oHB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "iF3-1s-Xfd"; */
+"iF3-1s-Xfd.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jVe-69-ZvS"; */
+"jVe-69-ZvS.text" = "Label";
+
+/* Class = "UILabel"; text = "str_Build"; ObjectID = "lV4-Of-3Vl"; */
+"lV4-Of-3Vl.text" = "str_Build";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mFT-VW-VJj"; */
+"mFT-VW-VJj.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nbl-Xg-KLC"; */
+"nbl-Xg-KLC.text" = "Label";
+
+/* Class = "UILabel"; text = "str_CopyRight"; ObjectID = "o12-iA-KEE"; */
+"o12-iA-KEE.text" = "str_CopyRight";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "o6R-Aw-loH"; */
+"o6R-Aw-loH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sSk-A1-m2L"; */
+"sSk-A1-m2L.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "umD-Kt-XaO"; */
+"umD-Kt-XaO.title" = "Root View Controller";

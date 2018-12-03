@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.tabBarController?.tabBar.isHidden = true
         
         
         if (bgColor == 0) {
@@ -78,6 +79,10 @@ class DetailViewController: UIViewController {
 
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.tabBarController?.tabBar.isHidden = false
     }
     
 

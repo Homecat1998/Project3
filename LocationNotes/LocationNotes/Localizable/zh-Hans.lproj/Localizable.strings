@@ -35,8 +35,8 @@
 "str_CLDeniedPerm"                  = "定位请求被拒绝。";
 "str_CLBlocked"                     = "被家长模式锁定。";
 
-"str_min"                           = "Min Temp: ";
-"str_max"                           = "Max Temp: ";
-"str_pressure"                      = "Pressure: ";
-"str_windSpeed"                     = "Wind Speed: ";
-"str_windDeg"                       = "Wind Degree: ";
+"str_min"                           = "最高气温：";
+"str_max"                           = "最低气温：";
+"str_pressure"                      = "气压：";
+"str_windSpeed"                     = "风速：";
+"str_windDeg"                       = "风向：";

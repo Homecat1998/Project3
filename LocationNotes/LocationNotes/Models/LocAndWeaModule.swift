@@ -18,4 +18,9 @@ class LocAndWeaModule {
     var city = ""
     var location : CLLocation!
     var bgColor = 0
+    var temp_max = ""
+    var temp_min = ""
+    var pressure = ""
+    var windSpeed = ""
+    var windDeg = ""
 }

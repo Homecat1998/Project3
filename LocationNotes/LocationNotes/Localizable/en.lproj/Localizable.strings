@@ -34,3 +34,9 @@
 "str_CLNoService"                   = "No Location Services";
 "str_CLDeniedPerm"                  = "This app was denied permission.";
 "str_CLBlocked"                     = "This app is blocked by parental controls.";
+
+"str_min"                           = "Min Temp: ";
+"str_max"                           = "Max Temp: ";
+"str_pressure"                      = "Pressure: ";
+"str_windSpeed"                     = "Wind Speed: ";
+"str_windDeg"                       = "Wind Degree: ";

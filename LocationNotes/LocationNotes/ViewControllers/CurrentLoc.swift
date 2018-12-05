@@ -63,6 +63,19 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
         setBGColor()
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetailWeather" {
+            
+            if let detailViewController = segue.destination as? WeatherDetailViewController  {
+                
+                detailViewController.module = module
+                    
+                
+            }
+        }
+    }
+    
     // MARK: - Core Location
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -165,6 +178,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                         print("weather get!")
                         self.weatherGet = 1
                         self.weatherStr = "\(String(describing: weather!))"
+                        self.module.weather = self.weatherStr
                     }
 
                 }
@@ -173,20 +187,38 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
                     
                     let temp = dic3["temp"]
                     let humidity = dic3["humidity"]
+                    let pressure = dic3["pressure"]
+                    let temp_max = dic3["temp_max"]
+                    let temp_min = dic3["temp_min"]
+                    self.module.pressure = "\(String(describing: pressure!)) kPa"
+                    self.module.temp_max = "\(String(describing: temp_max!)) K"
+                    self.module.temp_min = "\(String(describing: temp_min!)) K"
                     
-                    self.tempStr = "\(String(describing: temp!))K"
-                    self.humidityStr = "\(String(describing: humidity!))%"
+                    
+                    self.tempStr = "\(String(describing: temp!)) K"
+                    self.humidityStr = "\(String(describing: humidity!)) %"
+                    
+                    self.module.humidity = self.humidityStr
+                    self.module.temp = self.tempStr
                     
                     
+                }
+                
+                
+                if let dic5: NSDictionary = dic!["wind"] as? NSDictionary {
+                    let wS = dic5["speed"]
+                    let wD = dic5["deg"]
+                    
+                    self.module.windSpeed = "\(String(describing: wS!)) m/s"
+                    self.module.windDeg = "\(String(describing: wD!)) Deg"
                 }
             }
             
             
         }
         task.resume()
-        self.module.humidity = humidityStr
-        self.module.temp = tempStr
-        self.module.weather = weatherStr
+
+
         
         self.weatherLabel.text = weatherStr
         self.tempLabel.text = tempStr
@@ -224,6 +256,7 @@ class CurrentLoc: UIViewController, CLLocationManagerDelegate {
             view.backgroundColor = UIColor(hue: 74/360, saturation: 100/100, brightness: 80/100, alpha: 1.0) /* #9ccc00 */
         }
     }
+    
     
     @IBAction func OnSwipe(_ sender: UISwipeGestureRecognizer) {
         view.backgroundColor = UIColor(hue: 171/360, saturation: 0/100, brightness: 100/100, alpha: 1.0) /* #ffffff */
